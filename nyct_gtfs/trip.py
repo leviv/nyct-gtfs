@@ -191,6 +191,16 @@ class Trip:
             return None
 
         return self._vehicle_update.stop_id
+    
+    @property
+    def location_station(self):
+         """
+        Returns the subway stop related to the GTFS stop ID str for the next stop that this train will visit, or 
+        the current stop that the train is stopped at. This value is updated immediately upon departure from the prior 
+        station. This field is only available after the train gets underway. If this field is accessed before 
+        `Train.underway` is True, None is returned
+        """
+        return self._stops.get_station_name(self.location)
 
     @property
     def location_status(self):
