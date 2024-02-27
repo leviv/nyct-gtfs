@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="nyct-gtfs",
-    version="1.2.0",
+    version="1.3.2",
     description="Real-time NYC subway data parsing for humans",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -28,5 +28,5 @@ setup(
     package_data={
         "nyct_gtfs": ["gtfs_static/*.txt"]
     },
-    install_requires=["requests", "protobuf"]
+    install_requires=["requests", "protobuf", "httpx"]
 )
